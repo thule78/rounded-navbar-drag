@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    height: 100vh;
+    background-color:#4B9CD3 ;
+    overflow: hidden;
+}
+
+nav {
+    position: absolute;
+    top: 14rem;
+    right: 10rem;
+    width: 8rem;
+    height: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: grab;
+}
+
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-45deg);
+}
+
+.nav-wrapper .toggle-btn,
+.nav-wrapper span a {
+    height: 6rem;
+    width: 6rem;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+
+}
+
+.toggle-btn {
+    font-size: 3.5rem;
+    color: #0e2431;
+    z-index: 100;
+    cursor: pointer;
+    transform: rotate(-225deg);
+    transition: all 0.6s ease;
+}
+
+.open .toggle-btn {
+    transform: rotate(0deg);
+}
+
+.nav-wrapper span a {
+    text-decoration: none;
+    transform: rotate(45deg);
+   /* transform: rotate(calc(var(--i) * (360deg/8))); */
+}
+
+.nav-wrapper span {
+    position: absolute;
+    transition: all 0.6s ease;
+    opacity: 0; 
+}
+
+.open .nav-wrapper span {
+    transform: rotate(calc(var(--i) * (360deg/8))) translateY(12rem);
+    opacity: 1;
+}
+.nav-wrapper span a i {
+    font-size: 2.4rem;
+    color: #0e2431;
+    transform: rotate(calc(var(--i) * (360deg/ -8)));
+    opacity: 0.8;
+    transition: 0.2s;
+}
+
+.nav-wrapper span a:hover i {
+    opacity: 1;
+}
